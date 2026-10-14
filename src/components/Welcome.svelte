@@ -1,14 +1,14 @@
----
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
----
+<script>
+	import astroLogo from '../assets/astro.svg';
+	import background from '../assets/background.svg';
+</script>
 
 <div id="container">
-	<img id="background" src={background.src} alt="" fetchpriority="high" />
+	<img id="background" src={background} alt="" fetchpriority="high" />
 	<main>
 		<section id="hero">
 			<a href="https://astro.build">
-				<img src={astroLogo.src} width="115" height="48" alt="Astro Homepage" />
+				<img src={astroLogo} width="115" height="48" alt="Astro Homepage" />
 			</a>
 			<h1>
 				To get started, open the{' '}
@@ -50,6 +50,7 @@ import background from '../assets/background.svg';
 </div>
 
 <style>
+	:global {
 	#background {
 		position: fixed;
 		top: 0;
@@ -214,5 +215,6 @@ import background from '../assets/background.svg';
 		h1 {
 			line-height: 1.5;
 		}
+	}
 	}
 </style>

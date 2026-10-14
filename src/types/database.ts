@@ -7,14 +7,21 @@ export interface User {
   email: string; 
   passwordHash: string; 
   createdAt: Date; 
+  defaultVehicle?: string;
 }
 
 export interface Block {
   _id?: ObjectId;
   userId: ObjectId; 
-  milesDriven: number; 
-  fuelCost: number; 
+  startOdometer: number;
+  endOdometer: number;
+  milesDriven: number;
+  vehicle?: string;
+  earnings?: number;
+  routeNotes?: string;
+  fuelCost?: number;
   date: Date;
+  createdAt: Date;
 }
 
 export interface Maintenance {

@@ -1,46 +1,42 @@
-# Astro Starter Kit: Basics
+# FlexLedger
 
-```sh
-npm create astro@latest -- --template basics
-```
+FlexLedger helps delivery drivers keep track of delivery blocks, mileage, and fuel costs.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Stack
 
-## 🚀 Project Structure
+- Astro provides the pages and shared HTML layout.
+- Svelte components provide the interface; interactive components are hydrated with Astro's `client:load` directive.
+- Express provides the API, with MongoDB as the data store.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Project structure
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+src/
+├── components/
+│   ├── BlocksHome.svelte
+│   ├── Login.svelte
+│   ├── Register.svelte
+│   └── Welcome.svelte
+├── layouts/
+│   └── Layout.astro
+└── pages/
+    ├── blocks.astro
+    ├── index.astro
+    └── login.astro
+server/
+└── ...
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Svelte is enabled by `@astrojs/svelte` in `astro.config.mjs`. Keep route and document structure in Astro, and build UI components in `src/components` as `.svelte` files.
 
-## 🧞 Commands
+## Commands
 
-All commands are run from the root of the project, from a terminal:
+Run these commands from the `flexledger` directory:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| Command | Action |
+| --- | --- |
+| `npm install` | Install dependencies |
+| `npm run dev` | Start the development environment |
+| `npm run build` | Build the production site |
+| `npm run preview` | Preview the production build |
+| `npm run test:api` | Run API tests |

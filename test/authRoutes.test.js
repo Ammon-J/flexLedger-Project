@@ -64,6 +64,35 @@ test('opening the register endpoint explains that it accepts POST requests', asy
 	});
 });
 
+test('blocks are unavailable without an authenticated session', async () => {
+	const response = await fetch(`${apiUrl}/api/blocks`);
+
+	assert.equal(response.status, 401);
+	assert.deepEqual(await response.json(), { message: 'Sign in to view this page.' });
+});
+
+test('creating a block requires an authenticated session', async () => {
+	const response = await fetch(`${apiUrl}/api/blocks`, {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({
+			date: '2026-10-07',
+			startOdometer: 42180,
+			endOdometer: 42304,
+		}),
+	});
+
+	assert.equal(response.status, 401);
+	assert.deepEqual(await response.json(), { message: 'Sign in to view this page.' });
+});
+
+test('current account endpoint is unavailable without an authenticated session', async () => {
+	const response = await fetch(`${apiUrl}/api/me`);
+
+	assert.equal(response.status, 401);
+	assert.deepEqual(await response.json(), { message: 'Sign in to view this page.' });
+});
+
 test('register rejects passwords that do not satisfy policy', async () => {
 	const response = await fetch(`${apiUrl}/api/auth/register`, {
 		method: 'POST',

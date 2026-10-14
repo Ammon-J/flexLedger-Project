@@ -168,7 +168,10 @@
 	<footer class="page-footer">Your miles. Your records. Your business.</footer>
 </main>
 
-<script>
+<script lang="ts">
+	import { onMount } from 'svelte';
+
+	onMount(() => {
 	const registrationForm = document.querySelector<HTMLFormElement>('.register-form');
 	const passwordField = document.querySelector<HTMLInputElement>('#password');
 	const confirmPasswordField = document.querySelector<HTMLInputElement>('#confirm-password');
@@ -208,7 +211,7 @@
 					throw new Error(result.message ?? 'Unable to create your account.');
 				}
 				statusMessage.textContent = result.message;
-				registrationForm.reset();
+				window.location.assign('/blocks');
 			} catch (error) {
 				statusMessage.dataset.error = 'true';
 				statusMessage.textContent =
@@ -231,6 +234,7 @@
 			});
 		});
 	}
+	});
 </script>
 
 <style>

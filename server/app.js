@@ -1,5 +1,6 @@
 import express from 'express';
 import authRoutes from './routes/authRoutes.js';
+import blockRoutes from './routes/blockRoutes.js';
 
 const app = express();
 
@@ -8,6 +9,7 @@ app.use(express.json({ limit: '16kb' }));
 app.use(express.urlencoded({ extended: false, limit: '16kb' }));
 app.use('/api/auth', authRoutes);
 app.use('/api', authRoutes);
+app.use('/api/blocks', blockRoutes);
 
 app.use((request, response) => {
 	response.status(404).json({ message: 'API route not found.' });

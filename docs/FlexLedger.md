@@ -41,6 +41,25 @@ If MongoDB is not configured, the API still starts, but registration and login r
 * `POST /api/register` (also `/api/auth/register`) - Creates a new user account.
 * `POST /api/login` (also `/api/auth/login`) - Authenticates a user and creates a server-side session.
 * `POST /api/logout` (also `/api/auth/logout`) - Revokes the current session and clears its HttpOnly cookie.
+* `GET /api/me` - Returns the current authenticated user's profile.
+
+### Delivery Block Routes
+* `GET /api/blocks` - Returns delivery blocks belonging to the authenticated user, newest first.
+  The session cookie is required; block queries are scoped to that session's user ID.
+* `POST /api/blocks` - Saves a delivery block for the authenticated user. Send a JSON body with
+  `date` (`YYYY-MM-DD`), `startOdometer`, and `endOdometer`; `earnings` and `routeNotes` are optional.
+  Odometer values must be non-negative numbers and the end reading cannot be less than the start.
+  Earnings must be non-negative and have up to two decimal places. Route notes are limited to 1000
+  characters. Miles driven are calculated as `endOdometer - startOdometer` on the server.
+  The user's current default vehicle is copied to the block when one is set.
+
+Created documents in the MongoDB `blocks` collection store the authenticated `userId`, block `date`,
+both odometer readings, calculated `milesDriven`, optional `vehicle`, `earnings`, and `routeNotes`,
+and `createdAt`.
+The endpoint returns `201 Created` with the new block. The session cookie is required, and clients
+cannot set the block owner or calculated mileage themselves.
+
+The Svelte block-entry form is available at `/blocks/new` and submits to `POST /api/blocks`.
 
 These are POST API endpoints; opening `/api/register` directly in a browser sends a GET request
 and returns `405 Method Not Allowed`. Submit the registration form or send a POST request with JSON.

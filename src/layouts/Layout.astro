@@ -1,3 +1,15 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = 'Create your account | FlexLedger',
+	description = 'Create your FlexLedger account and keep your delivery miles, fuel, and maintenance in one place.',
+} = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -8,9 +20,9 @@
 		<meta name="generator" content={Astro.generator} />
 		<meta
 			name="description"
-			content="Create your FlexLedger account and keep your delivery miles, fuel, and maintenance in one place."
+			content={description}
 		/>
-		<title>Create your account | FlexLedger</title>
+		<title>{title}</title>
 	</head>
 	<body>
 		<slot />
