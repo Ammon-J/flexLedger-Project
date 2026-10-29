@@ -1,8 +1,6 @@
 ---
-interface Props {
-	title?: string;
-	description?: string;
-}
+import './Layout.css';
+import type { LayoutProps } from '../js/Layout';
 
 const {
 	title = 'Create your account | FlexLedger',
@@ -28,17 +26,3 @@ const {
 		<slot />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		min-width: 320px;
-		width: 100%;
-		min-height: 100%;
-	}
-
-	body {
-		min-height: 100vh;
-	}
-</style>
