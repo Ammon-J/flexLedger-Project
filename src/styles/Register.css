@@ -1,0 +1,501 @@
+.register-page {
+		--green: #23764f;
+		--green-dark: #185c3c;
+		--green-soft: #edf5f0;
+		--ink: #202925;
+		--muted: #68736d;
+		--line: #dce3de;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		color: var(--ink);
+		background:
+			radial-gradient(ellipse at 13% 45%, rgba(226, 239, 230, 0.65), transparent 38%),
+			#f7f9f7;
+		font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	}
+
+	.site-header {
+		width: min(1160px, calc(100% - 64px));
+		min-height: 88px;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-bottom: 1px solid rgba(31, 67, 48, 0.09);
+	}
+
+	.brand {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		color: var(--ink);
+		font-size: 17px;
+		font-weight: 750;
+		letter-spacing: -0.04em;
+		text-decoration: none;
+	}
+
+	.brand-mark {
+		width: 32px;
+		height: 32px;
+		display: grid;
+		place-items: center;
+		border-radius: 8px;
+		background: var(--green);
+	}
+
+	.brand-mark svg {
+		width: 19px;
+		stroke: white;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 1.6;
+	}
+
+	.header-prompt,
+	.mobile-login {
+		margin: 0;
+		color: var(--muted);
+		font-size: 13px;
+	}
+
+	.header-prompt a,
+	.mobile-login a {
+		margin-left: 5px;
+		color: var(--green);
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.header-prompt a:hover,
+	.mobile-login a:hover {
+		color: var(--green-dark);
+		text-decoration: underline;
+	}
+
+	.register-layout {
+		width: min(1000px, calc(100% - 64px));
+		flex: 1;
+		margin: 0 auto;
+		padding: 54px 0 48px;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(390px, 460px);
+		align-items: center;
+		gap: clamp(56px, 9vw, 120px);
+	}
+
+	.intro {
+		max-width: 400px;
+		padding-bottom: 12px;
+	}
+
+	.eyebrow {
+		margin: 0 0 18px;
+		color: var(--green);
+		font-size: 11px;
+		font-weight: 800;
+		letter-spacing: 0.13em;
+		text-transform: uppercase;
+	}
+
+	.intro h1 {
+		margin: 0;
+		font-size: clamp(38px, 4.5vw, 54px);
+		font-weight: 740;
+		letter-spacing: -0.065em;
+		line-height: 1.06;
+	}
+
+	.intro-copy {
+		max-width: 340px;
+		margin: 20px 0 0;
+		color: var(--muted);
+		font-size: 16px;
+		line-height: 1.7;
+	}
+
+	.trust-note {
+		display: flex;
+		align-items: flex-start;
+		gap: 13px;
+		margin-top: 42px;
+		padding-top: 22px;
+		border-top: 1px solid rgba(31, 67, 48, 0.12);
+	}
+
+	.trust-icon {
+		width: 36px;
+		height: 36px;
+		flex: 0 0 36px;
+		display: grid;
+		place-items: center;
+		border-radius: 10px;
+		background: var(--green-soft);
+	}
+
+	.trust-icon svg {
+		width: 20px;
+		stroke: var(--green);
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 1.6;
+	}
+
+	.trust-note strong,
+	.trust-note span:last-child {
+		display: block;
+	}
+
+	.trust-note strong {
+		margin: 1px 0 5px;
+		font-size: 13px;
+	}
+
+	.trust-note div > span {
+		max-width: 280px;
+		color: var(--muted);
+		font-size: 12px;
+		line-height: 1.5;
+	}
+
+	.form-card {
+		padding: 36px 38px 30px;
+		border: 1px solid #e6ebe7;
+		border-radius: 16px;
+		background: #fff;
+		box-shadow: 0 18px 48px rgba(25, 55, 38, 0.08);
+	}
+
+	.mobile-heading {
+		display: none;
+	}
+
+	.form-heading {
+		margin-bottom: 25px;
+	}
+
+	.form-heading h2 {
+		margin: 0 0 7px;
+		font-size: 23px;
+		font-weight: 730;
+		letter-spacing: -0.045em;
+	}
+
+	.form-heading p {
+		margin: 0;
+		color: var(--muted);
+		font-size: 13px;
+	}
+
+	.register-form {
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+	}
+
+	.name-fields {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 12px;
+	}
+
+	.field {
+		min-width: 0;
+	}
+
+	.field label {
+		display: block;
+		margin-bottom: 7px;
+		font-size: 12px;
+		font-weight: 700;
+	}
+
+	.optional {
+		margin-left: 3px;
+		color: #89928d;
+		font-size: 11px;
+		font-weight: 450;
+	}
+
+	.input-wrap {
+		position: relative;
+	}
+
+	.field input {
+		width: 100%;
+		height: 43px;
+		box-sizing: border-box;
+		padding: 0 40px 0 12px;
+		border: 1px solid var(--line);
+		border-radius: 7px;
+		outline: none;
+		background: #fff;
+		color: var(--ink);
+		font: inherit;
+		font-size: 12px;
+		transition: border-color 150ms ease, box-shadow 150ms ease;
+	}
+
+	.field > input {
+		padding-right: 12px;
+	}
+
+	.field input::placeholder {
+		color: #919a95;
+		opacity: 1;
+	}
+
+	.field input:focus {
+		border-color: var(--green);
+		box-shadow: 0 0 0 3px rgba(35, 118, 79, 0.12);
+	}
+
+	.field-icon,
+	.password-toggle {
+		position: absolute;
+		top: 50%;
+		right: 11px;
+		width: 16px;
+		height: 16px;
+		transform: translateY(-50%);
+		color: #89928d;
+	}
+
+	.field-icon {
+		pointer-events: none;
+		stroke: currentColor;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 1.5;
+	}
+
+	.password-toggle {
+		display: grid;
+		place-items: center;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		cursor: pointer;
+	}
+
+	.password-toggle:hover {
+		color: var(--green);
+	}
+
+	.password-toggle svg {
+		width: 17px;
+		height: 17px;
+		stroke: currentColor;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 1.5;
+	}
+
+	.field-hint {
+		margin: 6px 0 0;
+		color: #818b85;
+		font-size: 10px;
+		line-height: 1.45;
+	}
+
+	.submit-button {
+		min-height: 44px;
+		margin-top: 1px;
+		border: 0;
+		border-radius: 7px;
+		background: var(--green);
+		color: #fff;
+		font: inherit;
+		font-size: 13px;
+		font-weight: 700;
+		cursor: pointer;
+		transition: background 150ms ease, transform 150ms ease;
+	}
+
+	.submit-button:hover {
+		background: var(--green-dark);
+	}
+
+	.submit-button:active {
+		transform: translateY(1px);
+	}
+
+	.submit-button:focus-visible,
+	.password-toggle:focus-visible,
+	.brand:focus-visible,
+	a:focus-visible {
+		outline: 3px solid rgba(35, 118, 79, 0.35);
+		outline-offset: 3px;
+	}
+
+	.form-footnote {
+		margin: -7px 0 0;
+		color: #7c8781;
+		font-size: 10px;
+		line-height: 1.55;
+		text-align: center;
+	}
+
+	.form-message {
+		margin: -8px 0 0;
+		color: var(--green);
+		font-size: 12px;
+		line-height: 1.5;
+		text-align: center;
+	}
+
+	.form-message[data-error] {
+		color: #a43e39;
+	}
+
+	.submit-button:disabled {
+		opacity: 0.7;
+		cursor: wait;
+	}
+
+	.mobile-login {
+		display: none;
+	}
+
+	.page-footer {
+		padding: 0 24px 24px;
+		color: #8a948e;
+		font-size: 11px;
+		text-align: center;
+	}
+
+	@media (max-width: 760px) {
+		.register-page {
+			background: #fff;
+		}
+
+		.site-header {
+			width: 100%;
+			min-height: 62px;
+			box-sizing: border-box;
+			padding: 0 20px;
+			border-bottom: 1px solid #edf0ed;
+		}
+
+		.brand {
+			gap: 8px;
+			font-size: 15px;
+		}
+
+		.brand-mark {
+			width: 28px;
+			height: 28px;
+			border-radius: 7px;
+		}
+
+		.header-prompt,
+		.intro,
+		.page-footer {
+			display: none;
+		}
+
+		.register-layout {
+			width: 100%;
+			display: block;
+			margin: 0;
+			padding: 0;
+		}
+
+		.form-card {
+			max-width: 520px;
+			margin: 0 auto;
+			padding: 0 24px 32px;
+			border: 0;
+			border-radius: 0;
+			box-shadow: none;
+		}
+
+		.mobile-heading {
+			min-height: 55px;
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			margin: 0 -24px 22px;
+			padding: 0 20px;
+			border-bottom: 1px solid #f0f2f0;
+			font-size: 13px;
+			font-weight: 650;
+		}
+
+		.back-link {
+			width: 28px;
+			height: 28px;
+			display: grid;
+			place-items: center;
+			color: var(--ink);
+		}
+
+		.back-link svg {
+			width: 18px;
+			height: 18px;
+			stroke: currentColor;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			stroke-width: 1.6;
+		}
+
+		.form-heading {
+			margin-bottom: 23px;
+		}
+
+		.form-heading h2 {
+			font-size: 23px;
+		}
+
+		.register-form {
+			gap: 17px;
+		}
+
+		.field label {
+			font-size: 11px;
+		}
+
+		.field input {
+			height: 42px;
+			font-size: 12px;
+		}
+
+		.submit-button {
+			min-height: 44px;
+			margin-top: 2px;
+		}
+
+		.mobile-login {
+			display: block;
+			margin-top: 2px;
+			text-align: center;
+			font-size: 12px;
+		}
+	}
+
+	@media (max-width: 360px) {
+		.name-fields {
+			grid-template-columns: 1fr;
+			gap: 17px;
+		}
+
+		.form-card {
+			padding-right: 18px;
+			padding-left: 18px;
+		}
+
+		.mobile-heading {
+			margin-right: -18px;
+			margin-left: -18px;
+			padding-right: 16px;
+			padding-left: 16px;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		* {
+			scroll-behavior: auto !important;
+			transition-duration: 0.01ms !important;
+		}
+	}
