@@ -1,0 +1,329 @@
+.auth-page {
+  display: grid;
+  place-items: center;
+}
+.auth-header {
+  display: flex;
+  height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 890px;
+  margin: 0 auto;
+  padding: 0;
+  border-bottom: 1px solid #dfe7e1;
+}
+.auth-header .brand {
+  margin-right: auto;
+  margin-left: 12px;
+}
+.back-link {
+  color: #718078;
+  font-size: 24px;
+  line-height: 1;
+}
+.auth-content {
+  padding: 31px 25px 20px;
+}
+.auth-content h1 {
+  margin-top: 11px;
+}
+.intro {
+  max-width: 285px;
+  margin-top: 8px;
+  line-height: 1.45;
+}
+.auth-form {
+  display: grid;
+  gap: 13px;
+  margin-top: 26px;
+}
+.name-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+textarea {
+  width: 100%;
+  border: 1px solid #dce2dd;
+  border-radius: 4px;
+  padding: 8px 10px;
+  resize: vertical;
+  font: inherit;
+}
+.block-form-card {
+  margin-bottom: 60px;
+}
+.auth-form label {
+  display: grid;
+  gap: 5px;
+  color: #26342d;
+  font-size: 9px;
+  font-weight: 750;
+}
+.auth-form input {
+  width: 100%;
+  height: 32px;
+  border: 1px solid #dce2dd;
+  border-radius: 4px;
+  padding: 0 10px;
+  outline: 0;
+  color: #25322c;
+  font-size: 10px;
+}
+.auth-form input:focus {
+  border-color: #267c56;
+  box-shadow: 0 0 0 2px #267c5620;
+}
+.input-wrap {
+  position: relative;
+  display: block;
+}
+.input-wrap > span,
+.input-action {
+  position: absolute;
+  top: 50%;
+  right: 9px;
+  transform: translateY(-50%);
+  color: #9da9a2;
+  font-size: 11px;
+}
+.input-action {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+.field-help,
+.optional {
+  color: #8c9791;
+  font-size: 8px;
+  font-weight: 400;
+}
+.field-help {
+  margin-top: -8px;
+}
+.forgot-link {
+  justify-self: end;
+  margin-top: -6px;
+  color: #287c56;
+  font-size: 9px;
+  font-weight: 700;
+}
+.switch-prompt {
+  margin-top: 18px;
+  text-align: center;
+  color: #8c9791;
+  font-size: 9px;
+}
+.switch-prompt a {
+  color: #257c54;
+  font-weight: 750;
+}
+.privacy-note {
+  margin: 27px auto 0;
+  max-width: 255px;
+  color: #8b948f;
+  font-size: 8px;
+  line-height: 1.45;
+  text-align: center;
+}
+.screen-footer {
+  padding: 25px;
+  color: #a0a9a3;
+  font-size: 8px;
+  text-align: center;
+}
+.signup-content {
+  padding-top: 25px;
+}
+.signup-content .auth-form {
+  margin-top: 19px;
+  gap: 10px;
+}
+.form-message {
+  padding: 8px;
+  border-radius: 4px;
+  background: #e9f4ed;
+  color: #267c56;
+  font-size: 9px;
+  line-height: 1.35;
+}
+.form-error {
+  padding: 8px;
+  border-radius: 4px;
+  background: #fff0ef;
+  color: #a63d39;
+  font-size: 9px;
+  line-height: 1.35;
+}
+.login-card {
+  background: #fff;
+  border: 1px solid #e0e8e1;
+  border-radius: 10px;
+  box-shadow: 0 14px 35px rgb(45 74 55 / 8%);
+}
+.signup-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(360px, 430px);
+  gap: 110px;
+  width: min(100% - 48px, 890px);
+  margin: 40px auto 0;
+  align-items: center;
+}
+.signup-intro {
+  padding-top: 20px;
+}
+.signup-intro h1 {
+  max-width: 320px;
+  margin-top: 18px;
+  font-size: 43px;
+  line-height: 1.02;
+}
+.signup-intro .intro {
+  max-width: 310px;
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.trust-note {
+  display: flex;
+  gap: 13px;
+  margin-top: 42px;
+  padding-top: 20px;
+  border-top: 1px solid #dfe7e1;
+  color: #54645b;
+}
+.trust-note > span {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  border-radius: 50%;
+  background: #e4f0e7;
+  color: #477f5c;
+}
+.trust-note strong {
+  display: block;
+  font-size: 11px;
+}
+.trust-note p {
+  max-width: 230px;
+  margin-top: 5px;
+  color: #819087;
+  font-size: 10px;
+  line-height: 1.45;
+}
+.signup-card {
+  padding: 29px;
+  border: 1px solid #e0e8e1;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 14px 35px rgb(45 74 55 / 8%);
+}
+.card-heading h2 {
+  font-size: 19px;
+  letter-spacing: -.03em;
+}
+.card-heading p {
+  margin-top: 5px;
+  color: #819087;
+  font-size: 10px;
+}
+.signup-card .auth-form {
+  margin-top: 22px;
+}
+.signup-card .switch-prompt {
+  margin-top: 16px;
+}
+.signup-login-link {
+  grid-column: 2;
+  margin-top: -88px;
+  color: #819087;
+  font-size: 10px;
+  text-align: center;
+}
+.signup-login-link a {
+  color: #477f5c;
+  font-weight: 750;
+}
+@media (min-width: 501px) {
+  .auth-page .phone-page {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+  .login-card {
+    align-self: center;
+    width: 330px;
+    margin: 70px auto 0;
+    padding: 30px;
+  }
+  .login-card h1 {
+    font-size: 23px;
+  }
+  .login-card .intro {
+    margin-top: 10px;
+    font-size: 10px;
+  }
+  .login-card .auth-form {
+    margin-top: 28px;
+  }
+  .auth-form {
+    gap: 17px;
+    margin-top: 36px;
+  }
+  .auth-form label {
+    font-size: 11px;
+  }
+  .auth-form input {
+    height: 42px;
+    font-size: 12px;
+  }
+  .auth-form .primary-button {
+    min-height: 44px;
+    font-size: 12px;
+  }
+  .screen-footer {
+    padding-bottom: 30px;
+  }
+}
+@media (max-width: 500px) {
+  .app-shell {
+    padding: 0;
+  }
+  @media (max-width: 700px) {
+    .signup-layout {
+      display: block;
+      width: min(100% - 36px, 500px);
+      margin-top: 35px;
+    }
+    .signup-intro {
+      padding: 0;
+    }
+    .signup-intro h1 {
+      max-width: 300px;
+      margin-top: 12px;
+      font-size: 34px;
+    }
+    .signup-intro .intro {
+      margin-top: 12px;
+      font-size: 12px;
+    }
+    .trust-note {
+      margin-top: 24px;
+    }
+    .signup-card {
+      margin-top: 30px;
+      padding: 23px 20px;
+    }
+    .signup-login-link {
+      grid-column: auto;
+      margin-top: 14px;
+    }
+    .auth-header {
+      padding: 0 18px;
+    }
+  }
+  .phone-page {
+    min-height: 100vh;
+    border-radius: 0;
+  }
+}
